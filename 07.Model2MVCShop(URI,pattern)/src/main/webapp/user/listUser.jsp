@@ -120,7 +120,9 @@
 		<td align="center">
 		   <input type="hidden" id="currentPage" name="currentPage" value=""/>
 	
-			<jsp:include page="../common/pageNavigator.jsp"/>	
+		<jsp:include page="../common/pageNavigator.jsp">	
+			<jsp:param name = "listType" value = "user"/>
+		</jsp:include>	
 			
     	</td>
 	</tr>

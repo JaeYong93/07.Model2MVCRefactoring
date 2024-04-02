@@ -25,7 +25,7 @@ function fncGetProductList(currentPage) {
 
 <div style="width:98%; margin-left:10px;">
 
-<form name="detailForm" action="/listProduct.do" method="post">
+<form name="detailForm" action="/product/listProduct" method="post">
 
 <input type = "hidden" id = "menu" name = "menu" value = "">
 
@@ -117,13 +117,13 @@ function fncGetProductList(currentPage) {
 	 		<td></td>
 	 		<c:if test = "${param.menu != null && param.menu eq 'manage'}">
 	 			<td align = "left">
-	 				<a href = "/getProduct.do?prodNo=${product.prodNo}&menu=manage">${product.prodName}</a>
+	 				<a href = "/product/getProduct?prodNo=${product.prodNo}&menu=manage">${product.prodName}</a>
 	 			</td>
 	 		</c:if>
 	 		
 	 		<c:if test = "${param.menu != null && param.menu eq 'search'}">
 	 			<td align = "left">
-	 				<a href = "/getProduct.do?prodNo=${product.prodNo}&menu=search">${product.prodName}</a>
+	 				<a href = "/product/getProduct?prodNo=${product.prodNo}&menu=search">${product.prodName}</a>
 	 			</td>
 	 		</c:if>	
 	 	<td></td>
@@ -141,7 +141,7 @@ function fncGetProductList(currentPage) {
                 		</c:when>
                 		<c:when test="${product.proTranCode eq '2'}">
                     		<td align="left">구매완료
-                    		<a href="updateTranCodeByProd.do?prodNo=${product.prodNo}&tranCode=${product.proTranCode}">배송하기</a></td>
+                    		<a href="/purchase/updateTranCodeByProd?prodNo=${product.prodNo}&tranCode=${product.proTranCode}&currentPage=${param.currentPage}">배송하기</a></td>
                 		</c:when>
                 		<c:when test="${product.proTranCode eq '3'}">
                   	  		<td align="left">배송중</td>
